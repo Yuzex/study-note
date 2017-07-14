@@ -23,11 +23,14 @@ int main()
 		scanf("%d",&data);
 		top = pushStack(top, data);
 	}while(0 != data);
-	
-	if(NULL == (top = popStack(top)))
-		printf("stack has not any data.\n");
-	else
-		printf("pop success.\n");
+	while(NULL != top)
+	{
+		if(NULL == (top = popStack(top)))
+			printf("stack has not any data.\n");
+		else
+			printf("pop success.\n");
+	}
+
 	printList(top);
 	return 0;
 }
